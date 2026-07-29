@@ -1,0 +1,803 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Viewer guide &#8212; PQViewer documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=cc1b1365" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=8a448e45"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'viewer-guide';</script>
+    <link rel="icon" href="_static/pq-logo.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Data sources and periodic conventions" href="data-and-conventions.html" />
+    <link rel="prev" title="Jupyter" href="jupyter.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pq-logo.png" class="logo__image only-light" alt=""/>
+    <img src="_static/pq-logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">PQViewer</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="web-demo.html">
+    Web demo
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="jupyter.html">
+    Jupyter
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Viewer guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="data-and-conventions.html">
+    Data sources and periodic conventions
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="trajectory-analysis.html">
+    Trajectory analysis
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="figures-and-recipes.html">
+    Figures and recipes
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="python-api.html">
+    Python API
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="troubleshooting.html">
+    Troubleshooting
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MolarVerse/PQViewer" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting-started.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="web-demo.html">
+    Web demo
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="jupyter.html">
+    Jupyter
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Viewer guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="data-and-conventions.html">
+    Data sources and periodic conventions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="trajectory-analysis.html">
+    Trajectory analysis
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="figures-and-recipes.html">
+    Figures and recipes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="python-api.html">
+    Python API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="troubleshooting.html">
+    Troubleshooting
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MolarVerse/PQViewer" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Viewer guide</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="viewer-guide">
+<h1>Viewer guide<a class="headerlink" href="#viewer-guide" title="Link to this heading">#</a></h1>
+<p>The interface is one continuous scientific workspace. The structure stays on
+the canvas while <strong>View</strong>, <strong>Edit</strong>, <strong>Analyze</strong>, and <strong>Export</strong> expose one task
+at a time. On narrow screens, <strong>Tools</strong> opens the same View/Edit/Analyze
+inspector as a bottom sheet; its arrow expands the sheet to full height.</p>
+<section id="canvas">
+<h2>Canvas<a class="headerlink" href="#canvas" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Drag to rotate.</p></li>
+<li><p>Secondary-drag or middle-drag to pan.</p></li>
+<li><p>Scroll or pinch to zoom.</p></li>
+<li><p>Click an atom to select it.</p></li>
+<li><p>Shift-click to extend or reduce the selection.</p></li>
+<li><p>Shift-drag empty space for box selection.</p></li>
+<li><p>Click empty space to clear the selection.</p></li>
+</ul>
+<p>The small canvas controls fit the structure and select perspective, XY, XZ, or
+YZ views. Camera orientation and selection stay stable while frames change.</p>
+</section>
+<section id="edit">
+<h2>Edit<a class="headerlink" href="#edit" title="Link to this heading">#</a></h2>
+<p>Choose <strong>Edit</strong> or press <code class="docutils literal notranslate"><span class="pre">E</span></code> for source-data changes. <strong>Cell + structure</strong>
+shows the formula, atom and frame counts, and boundary conditions. The cell
+editor accepts either lengths and angles or the full 3 × 3 lattice vectors.
+Each periodic axis can be enabled separately. By default, changing the cell
+keeps Cartesian atom positions fixed; enable <strong>Keep fractional positions</strong>
+when atoms should scale with the lattice.</p>
+<p>Molecules without a source cell receive a centered orthorhombic suggestion
+based on their coordinate extent. Applying it creates a cell; nothing is added
+automatically.</p>
+<p>Clicking an atom opens its read-only scientific details in <strong>Analyze</strong>. Choose
+<strong>Edit atom</strong> there, or choose <strong>Selected atom</strong> while Edit is open, to change
+element identity and Cartesian coordinates. Element changes apply to the whole
+structure, while coordinates apply to the displayed frame. Edits are local,
+reversible, and used by figure export. <strong>Download current frame</strong> writes the
+edited structure as EXTXYZ, including lattice and periodic-axis information.</p>
+</section>
+<section id="analyze">
+<h2>Analyze<a class="headerlink" href="#analyze" title="Link to this heading">#</a></h2>
+<p>Analyze is always available. With no selection it explains the selection
+gestures. One selected atom shows its identity, position, charge, force, and
+velocity values without exposing accidental edits. Ordered selections of two,
+three, or four atoms show a distance, angle, or dihedral. Larger selections
+show their formula, centroid, extent, and unique-atom count.</p>
+<p>The selection bar exposes actions that apply to the current selection:</p>
+<ul class="simple">
+<li><p><strong>Select</strong> expands the selection to an element, molecule, residue, connected
+component, or atoms within a distance.</p></li>
+<li><p><strong>Plot</strong> follows a distance, angle, or dihedral across the trajectory.</p></li>
+<li><p><strong>Pin</strong> keeps a measurement for recall or comparison.</p></li>
+<li><p><strong>Track</strong> shows the selected atoms’ recent paths.</p></li>
+<li><p><strong>Analyze</strong> opens pair-distribution setup for suitable periodic data.</p></li>
+<li><p><strong>Details</strong> inspects a single atom.</p></li>
+<li><p><strong>Summary</strong> reports formula, center, extent, and atom count for larger
+selections.</p></li>
+</ul>
+<p>Periodic measurements use the exact minimum image by default. Switch to
+displayed images when measuring a chosen replica.</p>
+<p>Saved selections and pinned measurements last for the current workspace and
+dataset. Reloading the browser clears them.</p>
+</section>
+<section id="view">
+<h2>View<a class="headerlink" href="#view" title="Link to this heading">#</a></h2>
+<p>Choose <strong>View</strong> or press <code class="docutils literal notranslate"><span class="pre">V</span></code> to open the controls supported by the current
+source.</p>
+<p>Representations are explicit: ball-and-stick, spacefill, licorice, lines,
+ribbon, coordination polyhedra, and surface. Atom and bond size, coloring,
+hydrogen visibility, and interactive quality are adjustable in the same
+inspector. Light and dark appearance are explicit View settings. PQViewer
+chooses a sensible initial display for the loaded data, but every representation
+and layer remains directly controllable; the inspector does not require a
+scientific-system preset.</p>
+<p>Coordination geometry follows the visible bonding topology. Planar ligand
+shells are shown as polygons; non-planar shells are shown as polyhedra. When
+bonds are inferred, PQViewer uses the nearest distance shell so longer contacts
+do not inflate coordination. If several metal sites are available, transition
+metal coordination is preferred; this keeps perovskites focused on their
+octahedral network. Polyhedra that protrude outside a displayed single cell are
+omitted, and dense structures show a deterministic subset.</p>
+<p>A single visible unit cell does not draw minimum-image bonds through its
+boundary. Repeated-cell views retain bonds between neighboring displayed cells.</p>
+<p><strong>Overlays</strong></p>
+<ul class="simple">
+<li><p>Show or hide water</p></li>
+<li><p>Show or hide the periodic cell</p></li>
+<li><p>Display force and velocity vectors with adjustable scale</p></li>
+</ul>
+<p><strong>Periodic</strong></p>
+<ul class="simple">
+<li><p>Atom coordinates: wrap each atom into the displayed cell</p></li>
+<li><p>Molecule coordinates: keep known molecules whole while wrapping</p></li>
+<li><p>Unwrapped coordinates: follow continuous motion across frames</p></li>
+<li><p>Center the displayed cell at the PQ origin, structure, or selection</p></li>
+<li><p>Mirror the display along <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, or <code class="docutils literal notranslate"><span class="pre">c</span></code></p></li>
+<li><p>Repeat periodic images along each available axis</p></li>
+</ul>
+<p>These controls change the display only. They do not rewrite source coordinates.
+Use command search for <strong>Source coordinates</strong> when the stored coordinates need
+to be shown without display wrapping.</p>
+<p>The interactive view uses the locally bundled 3Dmol renderer. If it cannot
+initialize, PQViewer keeps the established Three renderer available as a
+fallback.</p>
+</section>
+<section id="export">
+<h2>Export<a class="headerlink" href="#export" title="Link to this heading">#</a></h2>
+<p><strong>Export</strong> opens one figure inspector for size, DPI, PNG or TIFF, white or
+transparent background, projection, labels, legend, scale bar, and reproducible
+figure recipes. The interactive 3Dmol canvas is not treated as publication
+output: figures use the independent high-quality renderer. Press
+<code class="docutils literal notranslate"><span class="pre">Cmd/Ctrl+Shift+S</span></code> for a quick 2400 × 1800 PNG with publication defaults.</p>
+</section>
+<section id="trajectory">
+<h2>Trajectory<a class="headerlink" href="#trajectory" title="Link to this heading">#</a></h2>
+<p>The timeline appears for multi-frame data. It provides first, previous,
+play/pause, next, last, scrubbing, and the current frame. Its menu contains:</p>
+<ul class="simple">
+<li><p>playback rate, stride, and once, loop, or rock mode</p></li>
+<li><p>frame bookmarks</p></li>
+<li><p>one reference frame</p></li>
+<li><p>supplied scalar-property plots</p></li>
+<li><p>displacement vectors after a reference frame is set</p></li>
+<li><p>pair-distribution and coordination analysis when supported</p></li>
+</ul>
+<p>Property and measurement plot cursors follow the displayed frame. Selecting a
+point in those plots navigates back to its frame. Pair-distribution and
+coordination plots aggregate frames and are not linked to one current frame.</p>
+<p>Start selected-atom trails with <strong>Track</strong> in the selection bar or command search.
+Trails show the current position and up to 50 previous frames. The
+reference-frame menu controls displacement vectors.</p>
+<p>Selections, pins, bookmarks, and references belong to the current workspace and
+reset when a new dataset is opened. Up to eight measurements, twelve bookmarks,
+and sixteen atom-image selections can be tracked at once.</p>
+</section>
+<section id="search-and-keyboard">
+<h2>Search and keyboard<a class="headerlink" href="#search-and-keyboard" title="Link to this heading">#</a></h2>
+<p>The central <strong>Search</strong> control finds atoms, settings, and commands. Press <code class="docutils literal notranslate"><span class="pre">⌘K</span></code>
+on macOS, <code class="docutils literal notranslate"><span class="pre">Ctrl+K</span></code> on Linux and Windows, or <code class="docutils literal notranslate"><span class="pre">/</span></code> on any platform. Type to filter,
+use <code class="docutils literal notranslate"><span class="pre">↑</span></code> and <code class="docutils literal notranslate"><span class="pre">↓</span></code> to move through results, and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> to open the selected
+setting or run the selected command. Setting results show their path, such as
+<strong>View › Layers › Bonds</strong> or <strong>Edit › Cell › Vectors</strong>, then open collapsed
+sections, scroll the setting into view, and highlight it briefly.</p>
+<p>Natural scientific terms are indexed. Queries such as <code class="docutils literal notranslate"><span class="pre">bond</span> <span class="pre">across</span> <span class="pre">cell</span></code>,
+<code class="docutils literal notranslate"><span class="pre">atom</span> <span class="pre">color</span></code>, <code class="docutils literal notranslate"><span class="pre">edit</span> <span class="pre">lattice</span> <span class="pre">vectors</span></code>, <code class="docutils literal notranslate"><span class="pre">distance</span></code>, <code class="docutils literal notranslate"><span class="pre">dark</span> <span class="pre">mode</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">transparent</span> <span class="pre">image</span></code> lead to the relevant control. Search also accepts commands
+such as <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">within</span> <span class="pre">3</span> <span class="pre">Å</span> <span class="pre">of</span> <span class="pre">selection</span></code>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Keys</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">←</span></code> / <code class="docutils literal notranslate"><span class="pre">→</span></code></p></td>
+<td><p>Previous or next frame</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Shift</span></code> + <code class="docutils literal notranslate"><span class="pre">←</span></code> / <code class="docutils literal notranslate"><span class="pre">→</span></code></p></td>
+<td><p>Move ten frames</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Home</span></code> / <code class="docutils literal notranslate"><span class="pre">End</span></code></p></td>
+<td><p>First or last frame</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Space</span></code></p></td>
+<td><p>Play or pause</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">M</span></code></p></td>
+<td><p>Bookmark the current frame</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">R</span></code></p></td>
+<td><p>Fit the structure</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">1</span></code> / <code class="docutils literal notranslate"><span class="pre">2</span></code> / <code class="docutils literal notranslate"><span class="pre">3</span></code> / <code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+<td><p>Perspective / XY / XZ / YZ</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">↑</span></code> / <code class="docutils literal notranslate"><span class="pre">↓</span></code>, <code class="docutils literal notranslate"><span class="pre">Enter</span></code></p></td>
+<td><p>Browse atoms and toggle selection</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">E</span></code> / <code class="docutils literal notranslate"><span class="pre">V</span></code></p></td>
+<td><p>Edit / View tools</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">D</span></code></p></td>
+<td><p>Light or dark appearance</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">B</span></code></p></td>
+<td><p>Toggle lines and ball-and-stick</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">C</span></code> / <code class="docutils literal notranslate"><span class="pre">F</span></code> / <code class="docutils literal notranslate"><span class="pre">W</span></code></p></td>
+<td><p>Toggle cell / forces / water</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Cmd/Ctrl+O</span></code></p></td>
+<td><p>Open files</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Cmd/Ctrl+Shift+S</span></code></p></td>
+<td><p>Export a figure</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">?</span></code></p></td>
+<td><p>Shortcut sheet</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Escape</span></code></p></td>
+<td><p>Close the active surface or clear selection</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Optional Vim navigation is enabled in the shortcut sheet:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Keys</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">h</span></code> / <code class="docutils literal notranslate"><span class="pre">l</span></code></p></td>
+<td><p>Previous / next frame</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">H</span></code> / <code class="docutils literal notranslate"><span class="pre">L</span></code></p></td>
+<td><p>Back / forward ten frames</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gg</span></code> / <code class="docutils literal notranslate"><span class="pre">G</span></code></p></td>
+<td><p>First / last frame</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">:</span></code></p></td>
+<td><p>Search atoms, settings, and commands</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Ctrl+[</span></code></p></td>
+<td><p>Close the active surface</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Pointer controls remain available when Vim navigation is enabled.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="jupyter.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Jupyter</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="data-and-conventions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data sources and periodic conventions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#canvas">Canvas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#edit">Edit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyze">Analyze</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view">View</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export">Export</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trajectory">Trajectory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-and-keyboard">Search and keyboard</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, MolarVerse.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
